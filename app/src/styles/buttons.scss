@@ -1,0 +1,15 @@
+@import './colors.scss';
+
+.keypad
+{
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 2em;
+
+    box-sizing: border-box;
+    width: 100px;
+    height: 100px;
+    margin: 2px;
+
+    color: $primary;
+    background-color: $secondary;
+}

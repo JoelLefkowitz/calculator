@@ -1,0 +1,42 @@
+{
+  "language": "en",
+  "ignorePaths": [
+    "./.cspell.txt",
+    "./package-lock.json",
+    ".gitignore",
+    "*.coverage",
+    "*.types",
+    "**/__pycache__/**",
+    "**/*.egg-info/**",
+    "**/build/**",
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/sqlite3",
+    "**/venv/**"
+  ],
+  "dictionaries": [
+    "misc",
+    "node",
+    "python",
+    "softwareTerms",
+    "typescript",
+    "local"
+  ],
+  "words": [
+    "balsamiq",
+    "bumpversion",
+    "fontobject",
+    "fullchain",
+    "joellefkowitz",
+    "letsencrypt",
+    "opentype",
+    "preconnect",
+    "privkey",
+    "proxied",
+    "truetype",
+    "venv",
+    "workdir",
+    "xmlid",
+    "yusei"
+  ]
+}

@@ -1,0 +1,25 @@
+@import './colors.scss';
+
+#calculator
+{
+    position: relative;
+
+    width: min(450px, 90%);
+    height: 500px;
+    margin: auto;
+    margin-top: 50px;
+
+    background-color: $dark-background;
+}
+
+#numpad
+{
+    width: 75%;
+    height: 100%;
+}
+
+#operators
+{
+    width: 25%;
+    height: 100%;
+}

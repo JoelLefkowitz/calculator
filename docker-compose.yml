@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+  calculator:
+    image: joellefkowitz/calculator:prod
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - type: bind
+        source: /etc/letsencrypt/live/calculator.joellefkowitz.co.uk/fullchain.pem
+        target: /etc/nginx/calculator.joellefkowitz.co.uk.crt
+      - type: bind
+        source: /etc/letsencrypt/live/calculator.joellefkowitz.co.uk/privkey.pem
+        target: /etc/nginx/calculator.joellefkowitz.co.uk.key
