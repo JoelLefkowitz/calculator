@@ -1,8 +1,15 @@
+import { keypad } from "./main";
+import { sendKeys } from "./calculate";
+
+const special = ["+", "-", ".", "√", "pow", "mod", "x", "÷", "C", "="];
+const keys = Array.from({ length: 10 }, (_, k) => k).concat(special);
+
 export const createButtons = () => {
-  for (let i = 0; i < 10; i++) {
-    let btn = document.createElement("button");
-    btn.innerHTML = i;
-    btn.classList = ["keypad"];
-    document.body.querySelector("#numpad").appendChild(btn);
+  for (let key of keys) {
+    let button = document.createElement("button");
+    button.innerHTML = key;
+    button.classList = ["key"];
+    button.addEventListener("click", () => sendKeys(key));
+    keypad.appendChild(button);
   }
 };

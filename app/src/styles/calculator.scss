@@ -2,24 +2,56 @@
 
 #calculator
 {
-    position: relative;
-
     width: min(450px, 90%);
-    height: 500px;
+    height: 100%;
+    margin: 5% auto;
+    padding-bottom: 10px;
+
+    border-radius: 5px;
+    background-color: $calculator-body;
+}
+
+#keypad
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+#screen
+{
+    top: 10px;
+
     margin: auto;
-    margin-top: 50px;
-
-    background-color: $dark-background;
 }
 
-#numpad
+#output
 {
-    width: 75%;
-    height: 100%;
+    margin: 20px auto;
 }
 
-#operators
+#screen,
+#output
 {
-    width: 25%;
-    height: 100%;
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 24px;
+
+    position: relative;
+    top: 10px;
+
+    overflow-x: scroll;
+
+    box-sizing: border-box;
+    width: 85%;
+    height: 50px;
+    padding: 10px;
+
+    white-space: nowrap;
+
+    color: white;
+    background-color: $dark-grey;
 }
