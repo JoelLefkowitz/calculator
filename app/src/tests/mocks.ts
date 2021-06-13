@@ -1,6 +1,6 @@
 export const loadMockDom = (): void =>
   document.body.insertAdjacentHTML(
-    'afterbegin',
+    "afterbegin",
     `  
     <div id="calculator">
       <div id="screen"></div>

@@ -1,2 +1,4 @@
+export const digits = Array.from({ length: 10 }, (_, k) => k);
+
 export const isDigitChar = (x: string): boolean =>
-  typeof x === 'string' && 0 < parseInt(x, 10) && parseInt(x, 10) < 10;
+  typeof x === "string" && x.length === 1 && digits.includes(parseInt(x, 10));

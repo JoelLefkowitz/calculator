@@ -1,6 +1,6 @@
-import './styles/styles.scss';
+import "./styles/styles.scss";
 
-import { createButtons } from './structural/buttons';
+import { createButtons } from "./structural/buttons";
 
 export const main = (): void => {
   createButtons();

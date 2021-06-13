@@ -1,16 +1,9 @@
-import { isDigitChar } from '../utils/strings';
-import { zip } from '../utils/arrays';
+import { digits } from '../utils/strings';
 
-export const digits = Array.from({ length: 10 }, (_, k) => k);
-export const stereo = ['.', 'pow', 'mod', 'x', '÷', 'C', '='];
-export const mono = ['+', '-', '√'];
-export const keys = [].concat(digits, stereo, mono);
+export const unaryOperators = ['+', '-', '√'];
+export const binaryOperators = ['pow', 'mod', 'x', '÷'];
+export const specialOperators = ['.']
+export const actions = ['C', '='];
 
-export const isRepeatableKey = (key: string): boolean =>
-  isDigitChar(key) || ['+', '-', '√'].includes(key);
-
-export const hasUnrepeatedKeyClash = (keys: string[]): boolean =>
-  zip(keys.slice(1), keys.slice(0, -1)).reduce(
-    (arr, i) => arr || (!isRepeatableKey(i[0]) && !isRepeatableKey(i[1])),
-    false
-  );
+export const operators = [].concat(unaryOperators, binaryOperators, specialOperators);
+export const keys = [].concat(digits, operators, actions);

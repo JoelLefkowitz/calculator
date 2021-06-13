@@ -10,8 +10,7 @@ module.exports = (config) => {
     frameworks: ['chai', 'mocha', 'webpack'],
     port: 9876,
     preprocessors: { 'src/**/*.spec.ts': ['webpack'] },
-    reporters: ['mocha'],
-    singleRun: true,
+    reporters: ['dots'],
     webpack: _.pick(webpack, 'module', 'resolve'),
   });
 };
