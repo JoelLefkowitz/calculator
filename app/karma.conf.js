@@ -1,22 +1,17 @@
+const _ = require('lodash');
+const path = require('path');
+const webpack = require(path.resolve(__dirname, 'webpack.config.js'));
+
 module.exports = (config) => {
   config.set({
-    browsers: ["ChromeHeadless"],
+    browsers: ['ChromeHeadless'],
     colors: true,
-    files: [{ pattern: "tests/**/*.spec.js", watched: false }],
-    frameworks: ["chai", "mocha", "webpack"],
+    files: [{ pattern: 'src/**/*.spec.ts', watched: false }],
+    frameworks: ['chai', 'mocha', 'webpack'],
     port: 9876,
-    preprocessors: { "tests/**/*.spec.js": ["webpack"] },
-    reporters: ["mocha"],
+    preprocessors: { 'src/**/*.spec.ts': ['webpack'] },
+    reporters: ['mocha'],
     singleRun: true,
-    webpack: {
-      module: {
-        rules: [
-          {
-            test: /\.s[ac]ss$/i,
-            use: ["style-loader", "css-loader", "sass-loader"],
-          },
-        ],
-      },
-    },
+    webpack: _.pick(webpack, 'module', 'resolve'),
   });
 };

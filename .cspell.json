@@ -28,14 +28,18 @@
     "fontobject",
     "fullchain",
     "joellefkowitz",
+    "keycap",
+    "lefkowitz",
     "letsencrypt",
     "opentype",
     "preconnect",
+    "preprocessors",
     "privkey",
     "proxied",
     "truetype",
     "venv",
     "workdir",
+    "xdescribe",
     "xmlid",
     "yusei"
   ]

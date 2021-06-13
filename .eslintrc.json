@@ -5,6 +5,7 @@
     "ecmaVersion": 2015
   },
   "env": {
+    "mocha": true,
     "browser": true,
     "node": true
   }

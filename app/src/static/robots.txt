@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+Sitemap: https://calculator.joellefkowitz.co.uk/sitemap.xml
