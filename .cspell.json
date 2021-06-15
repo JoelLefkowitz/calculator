@@ -28,6 +28,7 @@
     "favicon",
     "fontobject",
     "fullchain",
+    "instrumenter",
     "joellefkowitz",
     "keycap",
     "lastmod",
@@ -43,6 +44,8 @@
     "venv",
     "workdir",
     "xdescribe",
+    "entrypoint",
+    "cobertura",
     "xmlid",
     "yusei"
   ]
