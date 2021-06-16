@@ -9,13 +9,10 @@ module.exports = {
   mode: 'production',
   entry: path.join(src, 'main.ts'),
   output: { path: dist, filename: 'bundle.js' },
-  resolve: {
-    extensions: ['.js', '.ts', '.json'],
-  },
   module: {
     rules: [
       {
-        test: /(?<!test|spec).ts$/,
+        test: /(?!test|spec).*.ts$/,
         use: 'ts-loader',
       },
       {

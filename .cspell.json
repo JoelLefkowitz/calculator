@@ -9,6 +9,7 @@
     "**/__pycache__/**",
     "**/*.egg-info/**",
     "**/build/**",
+    "**/coverage/**",
     "**/dist/**",
     "**/node_modules/**",
     "**/sqlite3",
@@ -25,9 +26,11 @@
   "words": [
     "balsamiq",
     "bumpversion",
+    "cobertura",
+    "entrypoint",
     "favicon",
     "fontobject",
-    "fullchain",
+    "fullchain", 
     "instrumenter",
     "joellefkowitz",
     "keycap",
@@ -44,8 +47,6 @@
     "venv",
     "workdir",
     "xdescribe",
-    "entrypoint",
-    "cobertura",
     "xmlid",
     "yusei"
   ]

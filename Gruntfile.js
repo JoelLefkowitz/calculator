@@ -1,12 +1,5 @@
 const toExecs = (arr) => arr.map((i) => 'exec:'.concat(i));
 
-const developTasks = toExecs([
-  'express',
-  'eslintWatch',
-  'karmaWatch',
-  'webpackWatch',
-]);
-
 module.exports = function (grunt) {
   grunt.initConfig({
     exec: {
@@ -24,7 +17,10 @@ module.exports = function (grunt) {
       webpackWatch: 'npx webpack -c app/webpack.config.js --watch',
     },
     concurrent: {
-      develop: { tasks: developTasks, options: { logConcurrentOutput: true } },
+      serve: {
+        tasks: toExecs(['express', 'webpackWatch']),
+        options: { logConcurrentOutput: true },
+      },
     },
   });
   grunt.loadNpmTasks('grunt-exec');
@@ -50,9 +46,9 @@ module.exports = function (grunt) {
     toExecs(['webpack'])
   );
   grunt.registerTask(
-    'develop',
+    'serve',
     'Build a bundle and serve in watch mode',
-    'concurrent:develop'
+    'concurrent:serve'
   );
   grunt.registerTask(
     'publish',

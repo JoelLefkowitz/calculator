@@ -4,6 +4,7 @@ import {
   any,
   hasOverlap,
   isSubArray,
+  steps,
 } from '../utils/arrays';
 import { binaryOperators, operators } from '../structural/keys';
 
@@ -34,8 +35,9 @@ export function validateCalculation(keys: string[]): string | null {
 }
 
 export const hasOperatorClashes = (keys: string[]): boolean =>
+  keys.length > 1 &&
   any(
-    zip(keys.slice(0, -1), keys.slice(1)),
+    steps(keys),
     ([i, next]) =>
       (operators.includes(i) && binaryOperators.includes(next)) ||
       (i == '.' && operators.includes(next))

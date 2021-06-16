@@ -1,4 +1,18 @@
-import { all, allIndicesOf, any, hasOverlap, isSubArray, zip } from './arrays';
+import {
+  all,
+  allIndicesOf,
+  any,
+  fillToLength,
+  filterAfter,
+  findFirst,
+  hasOverlap,
+  isSubArray,
+  pairs,
+  range,
+  replaceSection,
+  steps,
+  zip,
+} from './arrays';
 
 import { parametrize } from '../tests/runners';
 
@@ -50,6 +64,38 @@ describe('all', () =>
     },
   ]));
 
+describe('range', () =>
+  parametrize(
+    range,
+    [
+      { inputs: [0, 0], expected: [] },
+      { inputs: [1, 1], expected: [] },
+      { inputs: [0, 1], expected: [0] },
+      { inputs: [0, 2], expected: [0, 1] },
+      { inputs: [1, 2], expected: [1] },
+      { inputs: [1, 3], expected: [1, 2] },
+      { inputs: [1, 4], expected: [1, 2, 3] },
+    ],
+    { deep: true }
+  ));
+
+describe('pairs', () =>
+  parametrize(
+    pairs,
+    [
+      {
+        inputs: [[0, 1, 2, 3]],
+        expected: [
+          [0, 1],
+          [2, 3],
+        ],
+      },
+      { inputs: [[0, 1, 2]], expected: [[0, 1]] },
+      { inputs: [[]], expected: [] },
+    ],
+    { deep: true }
+  ));
+
 describe('zip', () =>
   parametrize(
     zip,
@@ -75,6 +121,24 @@ describe('zip', () =>
           [2, 2],
         ],
       },
+    ],
+    { deep: true }
+  ));
+
+describe('steps', () =>
+  parametrize(
+    steps,
+    [
+      {
+        inputs: [[0, 1, 2, 3]],
+        expected: [
+          [0, 1],
+          [1, 2],
+          [2, 3],
+        ],
+      },
+      { inputs: [[0, 1]], expected: [[0, 1]] },
+      { inputs: [[]], expected: [] },
     ],
     { deep: true }
   ));
@@ -148,4 +212,82 @@ describe('hasOverlap', () =>
       inputs: [[1, 2], []],
       expected: false,
     },
+    {
+      inputs: [[], [1, 2]],
+      expected: false,
+    },
   ]));
+
+describe('filterAfter', () =>
+  parametrize(
+    filterAfter,
+    [
+      {
+        inputs: [[1, 2, 3], () => true],
+        expected: [1, 2, 3],
+      },
+      {
+        inputs: [[1, 2, 3], (x: number) => x == 1],
+        expected: [1],
+      },
+      {
+        inputs: [[1, 2, 3], (x: number, i: number) => x == 1 || i == 1],
+        expected: [1, 2],
+      },
+      {
+        inputs: [
+          [1, 2, 3, 4],
+          (x: number, i: number, arr: number[]) => arr[i + 1] - x == 1,
+        ],
+        expected: [1, 2, 3],
+      },
+    ],
+    { deep: true }
+  ));
+
+describe('replaceSection', () =>
+  parametrize(
+    replaceSection,
+    [
+      {
+        inputs: [[1, 2, 3], 1, 2, [1, 2, 3]],
+        expected: [1, 1, 2, 3, 3],
+      },
+    ],
+    { deep: true }
+  ));
+
+describe('fillToLength', () =>
+  parametrize(
+    fillToLength,
+    [
+      {
+        inputs: [[1, 2, 3], 5, 0],
+        expected: [1, 2, 3, 0, 0],
+      },
+      {
+        inputs: [[1, 2, 3], 3, 0],
+        expected: [1, 2, 3],
+      },
+    ],
+    { deep: true }
+  ));
+  
+describe('findFirst', () =>
+  parametrize(
+    findFirst,
+    [
+      {
+        inputs: [[1, 2], [0, 2, 1]],
+        expected: 1,
+      },
+      {
+        inputs: [[1, 2], []],
+        expected: -1,
+      },
+      {
+        inputs: [[], [1, 2]],
+        expected: -1,
+      },
+    ]
+  ));

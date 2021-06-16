@@ -8,6 +8,8 @@ import { parametrize } from '../tests/runners';
 
 describe('validateCalculation', () =>
   parametrize(validateCalculation, [
+    { inputs: [['1']], expected: null },
+    { inputs: [['1', '2']], expected: null },
     { inputs: [['1', '2', '3']], expected: null },
     { inputs: [['1', '+', '2', '+', '3']], expected: null },
     {

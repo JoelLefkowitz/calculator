@@ -1,5 +1,6 @@
+import { evaluateOperators, foldDigits } from '../services/calculate';
+
 import { getElementById } from '../utils/dom';
-import { parseCalculation } from '../services/calculate';
 import { validateCalculation } from '../services/validate';
 
 export function sendKey(key: string) {
@@ -11,7 +12,9 @@ export function sendKey(key: string) {
   if (key == '=') {
     const keys = screen.innerHTML.trimEnd().split(' ');
     const error = validateCalculation(keys);
-    output.innerHTML = error ? error : parseCalculation(keys).toString();
+    output.innerHTML = error
+      ? error
+      : evaluateOperators(foldDigits(keys)).toString();
   }
 
   screen.innerHTML = ['=', 'C'].includes(key)

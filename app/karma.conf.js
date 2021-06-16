@@ -6,7 +6,7 @@ module.exports = (config) => {
   config.set({
     browsers: ['ChromeHeadless'],
     frameworks: ['mocha', 'webpack'],
-    reporters: ['spec', 'coverage-istanbul'],
+    reporters: ['dots', 'coverage-istanbul', 'clear-screen'],
     files: [entrypoint],
     preprocessors: { [entrypoint]: ['webpack'] },
     webpack,
