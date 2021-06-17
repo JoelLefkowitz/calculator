@@ -6,7 +6,7 @@ node_js: 14.8.0
 
 before_install:
   - npm install
-  - npm global add grunt-cli
+  - npm install -g grunt-cli
 
 cache:
   - npm
