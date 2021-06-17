@@ -11,7 +11,5 @@ describe("createButtons", () => {
     createButtons();
     const keypad = getElementById("keypad");
     expect(keypad.children.length).to.equal(keys.length);
-
-    // TODO mock click event and count calls to sendKey
   });
 });

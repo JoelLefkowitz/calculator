@@ -1,6 +1,6 @@
 import { getElementById } from "../utils/dom";
 import { keys } from "./keys";
-import { sendKey } from "./display";
+import { sendKey } from "./output";
 
 export function createButtons() {
   const keypad = getElementById("keypad");
