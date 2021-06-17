@@ -1,6 +1,6 @@
 @import './colors.scss';
 
-html
+body
 {
     width: 100%;
     height: 100%;
@@ -14,5 +14,7 @@ html
 
 a
 {
-    text-decoration: none;
+    text-decoration: none !important;
+
+    color: white;
 }

@@ -1,25 +1,26 @@
 module.exports = {
+  mode: "development",
   resolve: {
-    extensions: ['.js', '.ts', '.json'],
+    extensions: [".js", ".ts", ".json"],
   },
-  devtool: 'inline-source-map',
+  devtool: "inline-source-map",
   module: {
     rules: [
       {
         test: /.ts$/,
-        use: 'ts-loader',
+        use: "ts-loader",
       },
       {
         test: /.ts$/,
-        enforce: 'post',
+        enforce: "post",
         use: {
-          loader: 'istanbul-instrumenter-loader',
+          loader: "istanbul-instrumenter-loader",
           options: { esModules: true },
         },
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
