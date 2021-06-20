@@ -25,8 +25,6 @@ export function evaluateOperators(arr: (string | number)[]): number {
     const operator = precedence.filter((x) => arr.includes(x))[0];
     const index = arr.indexOf(operator);
 
-    console.log(arr);
-
     switch (operator) {
       case "√": {
         arr = applyUnaryOperand(arr, index, (i: number) => Math.pow(i, 0.5));
