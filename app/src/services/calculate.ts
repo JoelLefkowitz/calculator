@@ -18,14 +18,14 @@ export const applyBinaryOperand = (
   ]);
 
 export function evaluateOperators(arr: (string | number)[]): number {
-  const errorMsg = (msg: string) => msg.concat(` \'${arr.join(" ")}\'.`);
-
   let computations = 0;
   const precedence = ["√", "pow", "mod", "÷", "x", "-", "+"];
 
   while (hasOverlap(operators, arr)) {
     const operator = precedence.filter((x) => arr.includes(x))[0];
     const index = arr.indexOf(operator);
+
+    console.log(arr);
 
     switch (operator) {
       case "√": {
@@ -61,15 +61,15 @@ export function evaluateOperators(arr: (string | number)[]): number {
     computations += 1;
 
     if (computations > 10) {
-      throw errorMsg("Failed to evaluate");
+      throw "Failed to evaluate in 10 steps or less.";
     }
 
     if (arr.includes(Infinity)) {
-      throw errorMsg("Encountered division by zero in");
+      throw "Encountered division by zero.";
     }
 
     if (arr.includes(NaN)) {
-      throw errorMsg("Encountered a negative root in");
+      throw "Encountered a negative root.";
     }
   }
 
@@ -78,7 +78,7 @@ export function evaluateOperators(arr: (string | number)[]): number {
   }
 
   if (typeof arr[0] != "number") {
-    throw errorMsg("Failed to parse");
+    throw "Failed to parse invalid input.";
   }
 
   return arr[0] as number;

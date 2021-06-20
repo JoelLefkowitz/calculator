@@ -10,6 +10,12 @@ describe("createButtons", () => {
   it("populates the keypad element with buttons", () => {
     createButtons();
     const keypad = getElementById("keypad");
+
     expect(keypad.children.length).to.equal(keys.length);
+    expect(keypad.children[0]).to.be.an("HTMLButtonElement");
+    expect((keypad.children[0] as HTMLButtonElement).click).to.be.a("function");
+    expect(() =>
+      (keypad.children[0] as HTMLButtonElement).click()
+    ).to.not.throw();
   });
 });

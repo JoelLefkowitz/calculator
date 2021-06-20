@@ -1,15 +1,13 @@
 import { expect } from "chai";
 import itParam from "mocha-param";
 
-export type Method = (...args: any[]) => any;
-
 export type TestCase = {
   inputs: any[];
   expected: any;
 };
 
 export const parametrize = (
-  method: Method,
+  callable: (...args: any[]) => any,
   testCases: TestCase[],
   options: { deep: boolean } = { deep: false }
 ): void =>
@@ -18,6 +16,6 @@ export const parametrize = (
     testCases,
     (testCase: TestCase) =>
       options.deep
-        ? expect(method(...testCase.inputs)).to.eql(testCase.expected)
-        : expect(method(...testCase.inputs)).to.equal(testCase.expected)
+        ? expect(callable(...testCase.inputs)).to.eql(testCase.expected)
+        : expect(callable(...testCase.inputs)).to.equal(testCase.expected)
   );

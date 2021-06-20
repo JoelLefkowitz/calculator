@@ -1,4 +1,4 @@
-import { steps } from "./iterators";
+export const last = (arr: any[]) => arr[arr.length - 1];
 
 export const filterAfter = (
   arr: any[],
@@ -23,17 +23,3 @@ export function fillToLength(
   const padding = new Array(Math.max(0, n - x.length)).fill(y);
   return padStart ? padding.concat(x) : x.concat(padding);
 }
-
-export const foldSteps = (
-  arr: any[],
-  n: number,
-  condition: (...x: any) => boolean,
-  replacement: (...x: any) => any
-) =>
-  steps(arr, n)
-    .reduce(
-      (acc, x: any[], i) =>
-        condition(...x) ? acc.concat(replacement(...x)) : acc.concat(arr[i]),
-      []
-    )
-    .concat(arr.slice(arr.length - n + 1));

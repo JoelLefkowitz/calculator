@@ -109,6 +109,15 @@ describe("steps", () =>
           [3, 4, 5],
         ],
       },
+      {
+        inputs: [[0, 1, 2, 3], 3, true],
+        expected: [
+          [0, 1, 2],
+          [1, 2, 3],
+          [2, 3, undefined],
+          [3, undefined, undefined],
+        ],
+      },
     ],
     { deep: true }
   ));

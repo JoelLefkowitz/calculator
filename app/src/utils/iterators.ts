@@ -11,6 +11,15 @@ export const zip = (...args: any[][]): any[][] =>
     args.map((arr) => arr[i])
   );
 
-export const steps = (x: any[], n: number): any[][] => {
-  return zip(...[x].concat(range(1, n).map((i) => x.slice(i))));
-};
+export const steps = (
+  x: any[],
+  n: number,
+  overflow: boolean = false
+): any[][] =>
+  zip(
+    ...[x].concat(
+      range(1, n).map((i) =>
+        overflow ? fillToLength(x.slice(i), x.length, undefined) : x.slice(i)
+      )
+    )
+  );

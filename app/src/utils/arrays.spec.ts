@@ -1,6 +1,22 @@
-import { fillToLength, filterAfter, foldSteps, replaceSection } from "./arrays";
+import { fillToLength, filterAfter, last, replaceSection } from "./arrays";
 
 import { parametrize } from "../tests/runners";
+
+describe("last", () =>
+  parametrize(last, [
+    {
+      inputs: [[1, 2]],
+      expected: 2,
+    },
+    {
+      inputs: [[1]],
+      expected: 1,
+    },
+    {
+      inputs: [[]],
+      expected: undefined,
+    },
+  ]));
 
 describe("filterAfter", () =>
   parametrize(
@@ -56,23 +72,6 @@ describe("replaceSection", () =>
       {
         inputs: [[1, 2, 3], 1, 2, [1, 2, 3]],
         expected: [1, 1, 2, 3, 3],
-      },
-    ],
-    { deep: true }
-  ));
-
-describe("foldSteps", () =>
-  parametrize(
-    foldSteps,
-    [
-      {
-        inputs: [
-          [1, 2, 3, 4],
-          2,
-          (i: number, j: number) => i + j == 5,
-          (i: number, j: number) => [0, 0, 0],
-        ],
-        expected: [1, 0, 0, 0, 3, 4],
       },
     ],
     { deep: true }
