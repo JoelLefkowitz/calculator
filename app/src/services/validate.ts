@@ -7,7 +7,7 @@ import { allIndicesOf } from "../utils/search";
 
 export function validateCalculation(keys: string[]): string | null {
   if (binaryOperators.includes(keys[0])) {
-    return "Starts with a binary operator.";
+    return "Starts with an operator.";
   }
 
   if (hasInvalidPeriods(keys)) {

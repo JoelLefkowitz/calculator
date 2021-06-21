@@ -14,11 +14,11 @@ describe("validateCalculation", () =>
     { inputs: [["1", "+", "2", "+", "3"]], expected: null },
     {
       inputs: [["x", "1", "2", "3"]],
-      expected: "Starts with a binary operator.",
+      expected: "Starts with an operator.",
     },
     {
       inputs: [["pow", "1", "2", "3"]],
-      expected: "Starts with a binary operator.",
+      expected: "Starts with an operator.",
     },
     {
       inputs: [["1", ".", ".", "1"]],

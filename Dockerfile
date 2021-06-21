@@ -1,7 +1,6 @@
 FROM node:14.9 AS build
 WORKDIR /build
 
-ARG BUILD_TARGET
 ENV PATH /build/node_modules/.bin:$PATH
 
 COPY package.json .
