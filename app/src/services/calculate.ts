@@ -1,6 +1,6 @@
-import { hasOverlap } from '../utils/sets';
-import { operators } from '../structural/keys';
-import { replaceSection } from '../utils/arrays';
+import { hasOverlap } from "../utils/sets";
+import { operators } from "../structural/keys";
+import { replaceSection } from "../utils/arrays";
 
 export const applyUnaryOperator = (
   arr: (number | string)[],
@@ -19,38 +19,38 @@ export const applyBinaryOperator = (
 
 export function evaluateOperators(arr: (string | number)[]): number {
   let computations = 0;
-  const precedence = ['√', 'pow', 'mod', '÷', 'x', '-', '+'];
+  const precedence = ["√", "pow", "mod", "÷", "x", "-", "+"];
 
   while (hasOverlap(operators, arr)) {
     const operator = precedence.filter((x) => arr.includes(x))[0];
     const index = arr.indexOf(operator);
 
     switch (operator) {
-      case '√': {
+      case "√": {
         arr = applyUnaryOperator(arr, index, (i: number) => Math.pow(i, 0.5));
         break;
       }
-      case 'pow': {
+      case "pow": {
         arr = applyBinaryOperator(arr, index, Math.pow);
         break;
       }
-      case 'mod': {
+      case "mod": {
         arr = applyBinaryOperator(arr, index, (i: number, j: number) => i % j);
         break;
       }
-      case 'x': {
+      case "x": {
         arr = applyBinaryOperator(arr, index, (i: number, j: number) => i * j);
         break;
       }
-      case '÷': {
+      case "÷": {
         arr = applyBinaryOperator(arr, index, (i: number, j: number) => i / j);
         break;
       }
-      case '+': {
+      case "+": {
         arr = applyBinaryOperator(arr, index, (i: number, j: number) => i + j);
         break;
       }
-      case '-': {
+      case "-": {
         arr = applyBinaryOperator(arr, index, (i: number, j: number) => i - j);
         break;
       }
@@ -59,15 +59,15 @@ export function evaluateOperators(arr: (string | number)[]): number {
     computations += 1;
 
     if (computations > 10) {
-      throw 'Failed to evaluate in 10 steps or less.';
+      throw "Failed to evaluate in 10 steps or less.";
     }
 
     if (arr.includes(Infinity)) {
-      throw 'Encountered division by zero.';
+      throw "Encountered division by zero.";
     }
 
     if (arr.includes(NaN)) {
-      throw 'Encountered a negative root.';
+      throw "Encountered a negative root.";
     }
   }
 
@@ -75,8 +75,8 @@ export function evaluateOperators(arr: (string | number)[]): number {
     return 0;
   }
 
-  if (typeof arr[0] != 'number') {
-    throw 'Failed to parse invalid input.';
+  if (typeof arr[0] != "number") {
+    throw "Failed to parse invalid input.";
   }
 
   return arr[0] as number;

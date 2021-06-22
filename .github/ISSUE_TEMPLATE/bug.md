@@ -1,5 +1,5 @@
 ---
-name: 'Bug Report'
+name: "Bug Report"
 about: Report a bug
 ---
 
@@ -17,11 +17,13 @@ about: Report a bug
 ## Minimal Reproduction
 
 ```code
+
 ```
 
 ## Stack trace / Error message
 
 ```code
+
 ```
 
 <!-- If the issue is accompanied by an exception or an error, please share it below: -->
@@ -29,4 +31,5 @@ about: Report a bug
 ## Your Environment
 
 ```code
+
 ```

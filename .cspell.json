@@ -42,6 +42,7 @@
     "preprocessors",
     "privkey",
     "proxied",
+    "testcafe",
     "truetype",
     "urlset",
     "venv",
