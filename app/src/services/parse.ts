@@ -60,7 +60,7 @@ export const removeSuperfluousSigns = (
         typeof k == "number",
       ]),
     ({ accumulated: _, newSteps: [i, j, k] }) => [i, applySign(j, k)],
-    (_) => 2
+    () => 2
   );
 
 // 2, '√', 5 -> 2, 'x', '√', 5

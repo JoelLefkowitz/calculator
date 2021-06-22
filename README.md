@@ -11,6 +11,13 @@ Calculator PWA.
 | Repository | ![issues][issues_shield] ![issues_closed][issues_closed_shield] ![pulls][pulls_shield] ![pulls_closed][pulls_closed_shield]                   |
 | Activity   | ![contributors][contributors_shield] ![monthly_commits][monthly_commits_shield] ![last_commit][last_commit_shield]                            |
 
+![screenshot][screenshot]
+
+
+Calculator PWA that validates input and feedback on gives errors.
+
+[![check_it_out]](https://calculator.joellefkowitz.co.uk/)
+
 ## Tests
 
 To run unit tests and generate a coverage report:
@@ -45,7 +52,7 @@ grunt format
 
 ## Continuous integration
 
-This repository uses Travis CI to build and test each commit. Formatting tasks and writing/generating documentation must be done before committing new code.
+This repository uses Github actions to build and test each commit. Formatting tasks and writing/generating documentation must be done before committing new code.
 
 ## Versioning
 
@@ -82,13 +89,12 @@ Lots of love to the open source community!
 <!-- Public links -->
 
 [semver]: http://semver.org/
-
-<!-- External links -->
-
 [readthedocs]: https://joellefkowitz-calculator.readthedocs.io/en/latest/
 [coffee]: https://www.buymeacoffee.com/joellefkowitz
 [coffee_button]: https://cdn.buymeacoffee.com/buttons/default-blue.png
 [be_kind]: https://media.giphy.com/media/osAcIGTSyeovPq6Xph/giphy.gif
+[check_it_out]: https://media.giphy.com/media/nqtCrUwM148ZVKQtlu/giphy.gif
+[screenshot]: https://github.com/JoelLefkowitz/calculator/blob/master/docs/screenshot.png
 
 <!-- Acknowledgments -->
 
