@@ -27,6 +27,7 @@
     "balsamiq",
     "bumpversion",
     "cobertura",
+    "codacy",
     "entrypoint",
     "favicon",
     "fontobject",
