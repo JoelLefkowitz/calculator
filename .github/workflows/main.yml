@@ -1,0 +1,32 @@
+name: Commit QA
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    steps:
+      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies 
+        run: |
+          npm i 
+          npm i -g grunt-cli
+
+      - name: Lint
+        run: grunt lint
+
+      - name: Unit tests
+        run: grunt test
+
+      - name: e2e tests
+        run: grunt e2e
+  
