@@ -1,6 +1,6 @@
 {
   "name": "calculator",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Calculator PWA.",
   "devDependencies": {
     "@types/chai": "^4.2.18",
