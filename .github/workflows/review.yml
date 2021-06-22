@@ -44,7 +44,7 @@ jobs:
           coverage-reports: app/coverage/cobertura-coverage.xml
 
       - name: Pull the TestCafe image
-      - run: docker pull testcafe/testcafe:1.14.2
+        run: docker pull testcafe/testcafe:1.14.2
 
       - name: Run e2e tests
         run: grunt e2e
