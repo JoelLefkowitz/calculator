@@ -12,8 +12,13 @@ module.exports = function (grunt) {
       express: "node express/main.js",
       karma: "npx karma start app/karma.conf.js --single-run",
       karmaWatch: "npx karma start app/karma.conf.js",
-      prettier: "npx prettier . --write --ignore-path .gitignore",
-      testCafe: "node express/e2e.js",
+      prettier: "npx prettier . --write --ignore-path .gitignore", 
+      testCafe: `
+        docker run -i --rm -v $(pwd):/cafe
+        --entrypoint node testcafe/testcafe
+        cafe/express/e2e.js
+        `,
+      testCafeLocal: 'node express/e2e.js',
       webpack: "npx webpack -c app/webpack.config.js",
       webpackWatch: "npx webpack -c app/webpack.config.js --watch",
     },
