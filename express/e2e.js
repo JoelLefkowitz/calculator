@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, "..", "app", "dist")));
 
 const instance = app.listen(port, async () => {
   const testCafe = await createTestCafe("localhost", 1337, 1338);
-  
+
   const failedCount = await testCafe
     .createRunner()
     .src(path.join(__dirname, "..", "e2e", "*"))
@@ -19,5 +19,3 @@ const instance = app.listen(port, async () => {
   instance.close();
   process.exit(failedCount ? 1 : 0);
 });
-
- 
