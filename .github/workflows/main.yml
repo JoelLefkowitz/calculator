@@ -16,9 +16,15 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
+
       - name: Install dependencies 
         run: |
-          npm i 
+          npm ci
           npm i -g grunt-cli
 
       - name: Lint
