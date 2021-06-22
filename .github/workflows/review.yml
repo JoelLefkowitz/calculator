@@ -11,27 +11,30 @@ jobs:
         node-version: [15.x]
 
     steps:
-      - uses: actions/checkout@v2
-
-      - uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-
+      - name: Set npm packages cache
       - uses: actions/cache@v2
         with:
           path: ~/.npm
           key: npm-${{ hashFiles('package-lock.json') }}
           restore-keys: npm-
 
+      - name: Set the node version
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Checkout the source code
+      - uses: actions/checkout@v2
+
       - name: Install dependencies
         run: |
           npm ci
           npm i -g grunt-cli
 
-      - name: Lint
+      - name: Run linters
         run: grunt lint
 
-      - name: Unit tests
+      - name: Run unit tests
         run: grunt test
 
       - name: Report unit test coverage
@@ -40,5 +43,8 @@ jobs:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           coverage-reports: app/coverage/cobertura-coverage.xml
 
-      - name: e2e tests
+      - name: Pull the TestCafe image
+      - run: docker pull testcafe/testcafe:1.14.2
+
+      - name: Run e2e tests
         run: grunt e2e
