@@ -11,14 +11,14 @@ jobs:
         node-version: [15.x]
 
     steps:
-      - name: Setup npm package caching
+      - name: Set up npm package caching
         uses: actions/cache@v2
         with:
           path: ~/.npm
           key: npm-${{ hashFiles('package-lock.json') }}
           restore-keys: npm-
-      
-      - name: Setup docker image caching
+
+      - name: Set up docker image caching
         uses: actions/cache@v2
         with:
           path: /var/lib/docker

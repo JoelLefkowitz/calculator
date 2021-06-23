@@ -14,12 +14,20 @@
     text-align: center;
 }
 
-@media screen and (max-height: $screen-md)
+@media screen and (max-height: 650px)
 {
     .footer
     {
         position: relative;
 
         margin-top: 30px;
+    }
+}
+
+@media screen and (max-height: 550px)
+{
+    .footer
+    {
+        visibility: hidden;
     }
 }

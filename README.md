@@ -13,7 +13,6 @@ Calculator PWA.
 
 ![screenshot][screenshot]
 
-
 Calculator PWA that validates input and feedback on gives errors.
 
 [![check_it_out]](https://calculator.joellefkowitz.co.uk/)
