@@ -11,12 +11,17 @@ jobs:
         node-version: [15.x]
 
     steps:
-      - name: Set npm packages cache
+      - name: Setup npm package caching
         uses: actions/cache@v2
         with:
           path: ~/.npm
           key: npm-${{ hashFiles('package-lock.json') }}
           restore-keys: npm-
+      
+      - name: Setup docker image caching
+        uses: actions/cache@v2
+        with:
+          path: /var/lib/docker
 
       - name: Set the node version
         uses: actions/setup-node@v2
@@ -42,9 +47,6 @@ jobs:
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           coverage-reports: app/coverage/cobertura-coverage.xml
-
-      - name: Pull the TestCafe image
-        run: grunt testCafePull
 
       - name: Run e2e tests
         run: grunt e2e

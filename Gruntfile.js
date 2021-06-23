@@ -51,7 +51,6 @@ const exec = {
   remark: 'npx remark -r .remarkrc . .github',
   testCafe: `docker run ${mount} --entrypoint node ${testCafe} wd/express/e2e.js`,
   testCafeLocal: 'node express/e2e.js',
-  testCafePull: `docker pull ${testCafe}`,
   webpack: 'npx webpack -c app/webpack.config.js',
   webpackWatch: 'npx webpack -c app/webpack.config.js --watch',
 };
