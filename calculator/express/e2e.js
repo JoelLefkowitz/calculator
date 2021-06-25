@@ -13,8 +13,7 @@ const instance = app.listen(port, async () => {
   const failedCount = await testCafe
     .createRunner()
     .src(path.join(__dirname, "..", "e2e", "*"))
-    .browsers(["chrome"])
-    // .browsers(["chromium:headless"])
+    .browsers(["chromium:headless"])
     .run();
 
   instance.close();
