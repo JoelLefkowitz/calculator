@@ -1,0 +1,6 @@
+project: calculator
+version: 1.1.0
+author: Joel Lefkowitz
+verbose_name: Calculator
+html_title: Calculator
+github_url: https://github.com/JoelLefkowitz/Calculator

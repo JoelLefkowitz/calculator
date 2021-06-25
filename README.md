@@ -1,4 +1,4 @@
-# calculator
+# Calculator
 
 Calculator PWA.
 
@@ -15,7 +15,7 @@ Calculator PWA.
 
 Calculator PWA that validates input and feedback on gives errors.
 
-[![check_it_out]](https://calculator.joellefkowitz.co.uk/)
+[![calculator][check_it_out]][calculator]
 
 ## Tests
 
@@ -93,7 +93,11 @@ Lots of love to the open source community!
 [coffee_button]: https://cdn.buymeacoffee.com/buttons/default-blue.png
 [be_kind]: https://media.giphy.com/media/osAcIGTSyeovPq6Xph/giphy.gif
 [check_it_out]: https://media.giphy.com/media/nqtCrUwM148ZVKQtlu/giphy.gif
-[screenshot]: https://github.com/JoelLefkowitz/calculator/blob/master/docs/screenshot.png
+
+<!-- Repo links -->
+
+[calculator]: https://calculator.joellefkowitz.co.uk/
+[screenshot]: https://github.com/joellefkowitz/calculator/blob/master/docs/screenshot.png
 
 <!-- Acknowledgments -->
 
@@ -110,7 +114,7 @@ Lots of love to the open source community!
 
 [codacy_shield]: https://img.shields.io/codacy/grade/6321128f8d6d48528ab5655801c06d25
 [readthedocs_shield]: https://img.shields.io/readthedocs/joellefkowitz-calculator
-[github_review_shield]: https://img.shields.io/github/workflow/status/JoelLefkowitz/calculator/Review
+[github_review_shield]: https://img.shields.io/github/workflow/status/joellefkowitz/calculator/Review
 [codacy_coverage_shield]: https://img.shields.io/codacy/coverage/6321128f8d6d48528ab5655801c06d25
 
 <!-- Repository shields -->
