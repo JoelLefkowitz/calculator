@@ -1,4 +1,4 @@
-declare var require: any;
+declare var require: NodeRequire;
 
 const resolve = (context: any) => context.keys().forEach(context);
 

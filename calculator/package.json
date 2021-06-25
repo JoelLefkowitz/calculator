@@ -5,6 +5,7 @@
   "devDependencies": {
     "@types/chai": "^4.2.18",
     "@types/mocha": "^8.2.2",
+    "@types/webpack-env": "^1.16.0",
     "chai": "^4.3.4",
     "copy-webpack-plugin": "^9.0.0",
     "css-loader": "^5.2.6",
