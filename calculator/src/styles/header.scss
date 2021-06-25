@@ -1,31 +1,28 @@
-header
-{
-    position: absolute;
-    
-    top: 30px;
+header {
+  position: absolute;
+  top: 30px;
 
-    width: 100%;
+  width: 100%;
 }
 
-h1
-{
-    font-family: 'Heebo', sans-serif;
+h1 {
+  font-family: "Heebo", sans-serif;
 
-    margin: 10px;
+  margin: 10px;
 
-    text-align: center;
+  text-align: center;
 
-    color: white;
+  color: white;
 }
 
 @media screen and (max-height: 600px) {
-    header {
-        visibility: hidden;
-    }
+  header {
+    visibility: hidden;
+  }
 }
 
 @media screen and (max-height: 680px) {
-    header {
-        top: 0;
-    }
+  header {
+    top: 0;
+  }
 }
