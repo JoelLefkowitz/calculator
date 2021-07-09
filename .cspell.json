@@ -43,6 +43,7 @@
     "genindex",
     "gruntfile",
     "hashicorp",
+    "hostvars",
     "htmlhelp",
     "idna",
     "imagesize",
